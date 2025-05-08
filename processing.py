@@ -8,6 +8,8 @@ def process_data(jobs_logs):
         job = structures.Job(pid)
 
         for log in logs:
+            job.set_description(log.description)
+
             if log.status == " START":
                 job.set_start_timestamp(log.timestamp)
             if log.status == " END":
@@ -20,4 +22,13 @@ def process_data(jobs_logs):
     return all_jobs
 
 def filter_data(jobs_status):
-    pass
+    bad_jobs = []
+
+    for job in jobs_status:
+        if job.minutes_duration > 10:
+            bad_jobs.append("ERROR: Job " + job.pid + " took longer than 10 minutes")
+        elif job.minutes_duration > 5:
+            bad_jobs.append("WARNING: Job " + job.pid + " took longer than 5 minutes")
+
+    print(bad_jobs)
+    return bad_jobs

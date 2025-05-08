@@ -12,12 +12,17 @@ class Log_Data:
         return str(self.timestamp) + " " + self.description + " " + self.status + " " + self.pid
 
 class Job:
+    pid = -1
+    description = ""
     minutes_duration = 0
     start = None
     stop = None
 
     def __init__(self, pid):
         self.pid = pid
+
+    def set_description(self, description):
+        self.description = description
 
     def set_start_timestamp(self, start_timestamp):
         self.start = start_timestamp
@@ -42,5 +47,5 @@ class Job:
         self.minutes_duration = int(t_diff.total_seconds() / 60)
 
     def __str__(self):
-        return self.pid + " " + str(self.start) + " " + str(self.stop) + " " + str(self.minutes_duration)
+        return self.pid + " " + self.description + " " + str(self.start) + " " + str(self.stop) + " " + str(self.minutes_duration)
 
