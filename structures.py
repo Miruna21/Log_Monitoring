@@ -22,6 +22,8 @@ class Log_Data:
 
 class Job:
     duration = 0
+    start = None
+    stop = None
 
     def __init__(self, pid):
         self.pid = pid
@@ -30,11 +32,11 @@ class Job:
         self.start = start_timestamp
 
     def set_stop_timestamp(self, stop_timestamp):
-        self.start = stop_timestamp
+        self.stop = stop_timestamp
 
     def calculate_duration(self):
         pass
 
     def __str__(self):
-        return str(self.timestamp) + " " + self.description + " " + self.status + " " + self.pid
+        return self.pid + " " + str(self.start) + " " + str(self.stop) + " " + str(self.duration)
 
