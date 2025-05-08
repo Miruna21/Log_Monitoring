@@ -22,13 +22,13 @@ def process_data(jobs_logs):
     return all_jobs
 
 def filter_data(jobs_status):
-    bad_jobs = []
+    bad_jobs_msg = []
 
     for job in jobs_status:
         if job.minutes_duration > 10:
-            bad_jobs.append("ERROR: Job " + job.pid + " took longer than 10 minutes")
+            bad_jobs_msg.append("ERROR: Job " + job.pid + " took longer than 10 minutes")
         elif job.minutes_duration > 5:
-            bad_jobs.append("WARNING: Job " + job.pid + " took longer than 5 minutes")
+            bad_jobs_msg.append("WARNING: Job " + job.pid + " took longer than 5 minutes")
 
-    print(bad_jobs)
-    return bad_jobs
+    print(bad_jobs_msg)
+    return bad_jobs_msg
