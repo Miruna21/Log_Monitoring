@@ -6,6 +6,9 @@ class Timestamp:
         self.minutes = minutes
         self.seconds = seconds
 
+    def __str__(self):
+        return self.hours + ":" + self.minutes + ":" + self.seconds
+
 
 class Log_Data:
     def __init__(self, timestamp, description, status, pid):
@@ -14,4 +17,6 @@ class Log_Data:
         self.status = status
         self.pid = pid
 
+    def __str__(self):
+        return str(self.timestamp) + " " + self.description + " " + self.status + " " + self.pid
 
