@@ -7,6 +7,7 @@ LOGS_FILE = "./logs.log"
 REPORT_FILE = "./report.out"
 
 if __name__ == "__main__":
-    logs_data = parsing.read_logs_data(LOGS_FILE)
-    logs_status = processing.process_data(logs_data)
-    reporting.write_report(logs_status, REPORT_FILE)
+    jobs_logs = parsing.read_logs_data(LOGS_FILE)
+    jobs_status = processing.process_data(jobs_logs)
+    bad_jobs = processing.filter_data(jobs_status)
+    reporting.write_report(bad_jobs, REPORT_FILE)
