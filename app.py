@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+"""
+Log Monitoring Application.
+
+Parses and analyzes system logs to detect long-running execution units.
+"""
+
 import parsing
 import processing
 import reporting
