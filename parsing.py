@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Parsing module for extracting execution unit data from log files.
+Parsing module for extracting execution unit logs from log files.
 """
 import csv
 import structures

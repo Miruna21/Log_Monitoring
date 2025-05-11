@@ -6,7 +6,7 @@ import structures
 
 def process_data(jobs_logs):
     """
-    Iterates through a dictionary of logs, where PID is the key,
+    Iterates through a dictionary of logs, where PID is the key
     and returns a list of execution units along with their corresponding durations.
     """
     all_jobs_status = []
@@ -29,8 +29,8 @@ def process_data(jobs_logs):
 
 def filter_data(jobs_status):
     """
-    Iterates through a dictionary of logs, where PID is the key,
-    and returns a list of execution units along with their corresponding durations.
+    Iterates through a list of execution units and returns a list of
+    warning or error messages if an execution unit exceeds a certain threshold.
     """
     bad_jobs_msg = []
 
