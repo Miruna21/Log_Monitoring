@@ -17,7 +17,7 @@ class LogData:
         self.pid = pid
 
     def __str__(self):
-        return str(self.timestamp) + " " + self.description + " " + self.status + " " + self.pid
+        return str(self.timestamp) + " " + self.description + " " + self.status + " " + str(self.pid)
 
 class Job:
     """
@@ -63,6 +63,6 @@ class Job:
 
     def __str__(self):
         return (
-                self.pid + " " + self.description + " " +
+                str(self.pid) + " " + self.description + " " +
                 str(self.start) + " " + str(self.stop) + " " + str(self.minutes_duration)
             )
